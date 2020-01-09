@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-kubeadm config images pull --image-repository "gcr.azk8s.cn/google_containers"
+kubeadm config images pull
 kubeadm init --config /home/vagrant/kubeadm.yaml
 
 sudo --user=vagrant mkdir -p /home/vagrant/.kube
