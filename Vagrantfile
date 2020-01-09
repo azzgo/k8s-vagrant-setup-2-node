@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
     end
     master.vm.provision "file", source: "./kubeadm.yaml", destination: "$HOME/kubeadm.yaml"
     master.vm.provision "shell", path: "ubuntu_basic-install.deb.sh"
-    master.vm.provision "shell", path: "master_setup.sh"
+    master.vm.provision "shell", path: "setup_master.sh"
   end
 
   config.vm.define "node", autostart: false do |node|
