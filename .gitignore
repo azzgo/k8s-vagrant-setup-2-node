@@ -1,4 +1,5 @@
 .vagrant/
+.credentials/
 *.DS_Store
 *.log
 kubeadm_join_cmd.sh
