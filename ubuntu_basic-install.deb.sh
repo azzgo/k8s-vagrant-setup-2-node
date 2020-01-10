@@ -28,7 +28,7 @@ deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
 EOF
 
 apt-get update
-apt-get install -y kubeadm=1.14.1-00 kubelet=1.14.1-00
+apt-get install -y kubeadm kubelet
 
 # 关闭 SWAP
 sudo swapoff -a

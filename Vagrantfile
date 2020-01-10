@@ -14,8 +14,8 @@ Vagrant.configure("2") do |config|
     master.vm.network "private_network", ip: "192.168.33.10"
     master.vm.hostname = "master"
     master.vm.provider "virtualbox" do |v|
-      v.memory = 2048
-      v.cpus = 2
+      v.memory = 4096
+      v.cpus = 3
     end
     master.vm.provision "file", source: "./kubeadm.yaml", destination: "$HOME/kubeadm.yaml"
     master.vm.provision "shell", path: "ubuntu_basic-install.deb.sh"
@@ -27,8 +27,8 @@ Vagrant.configure("2") do |config|
     node.vm.network "private_network", ip: "192.168.33.11"
     node.vm.hostname = "node"
     node.vm.provider "virtualbox" do |v|
-      v.memory = 2048
-      v.cpus = 2
+      v.memory = 4096
+      v.cpus = 3
     end
     node.vm.provision "shell", path: "ubuntu_basic-install.deb.sh"
     node.vm.provision "shell", inline: "sh /vagrant/kubeadm_join_cmd.sh"
