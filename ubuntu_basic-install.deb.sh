@@ -1,5 +1,6 @@
 #!/bin/sh
 USER="vagrant"
+K8S_VERSION=1.17.0-00
 
 # 安装 docker
 curl -fsSL https://get.docker.com | sudo sh -s -- --mirror Aliyun
@@ -28,7 +29,7 @@ deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
 EOF
 
 apt-get update
-apt-get install -y kubeadm=1.17.0-00 kubelet=1.17.0-00
+apt-get install -y kubeadm=${K8S_VERSION} kubelet=${K8S_VERSION}
 
 # 关闭 SWAP
 sudo swapoff -a
