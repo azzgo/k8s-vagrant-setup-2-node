@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 kubeadm config images pull
 kubeadm init --config /home/vagrant/kubeadm.yaml
 
@@ -28,5 +27,5 @@ cat /etc/kubernetes/admin.conf | grep client-certificate-data: | sed s/.*client-
 cat /etc/kubernetes/admin.conf | grep client-key-data: | sed s/.*client-key-data:[[:space:]]*// | base64 -d > /vagrant/.credentials/client-key-data.pem
 
 # 单机节点
-kubectl taint nodes --all node-role.kubernetes.io/master-
+## kubectl taint nodes --all node-role.kubernetes.io/master-
 

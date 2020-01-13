@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
     master.vm.provision "shell", path: "setup_master.sh"
   end
 
-  config.vm.define "node", autostart: false do |node|
+  config.vm.define "node" do |node|
     node.vm.box = "ubuntu/xenial64"
     node.vm.network "private_network", ip: "192.168.33.11"
     node.vm.hostname = "node"

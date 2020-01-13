@@ -2,6 +2,8 @@
 USER="vagrant"
 K8S_VERSION=1.17.0-00
 
+set -e
+
 # 安装 docker
 curl -fsSL https://get.docker.com | sudo sh -s -- --mirror Aliyun
 usermod -aG docker $USER
@@ -33,3 +35,13 @@ apt-get install -y kubeadm=${K8S_VERSION} kubelet=${K8S_VERSION}
 
 # 关闭 SWAP
 sudo swapoff -a
+
+
+## 更改 kubelet 默认监听网卡
+## Issue: https://github.com/kubernetes/kubernetes/issues/60835
+NODE_IP=$(ip addr show enp0s8 | grep inet | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}/" | tr -d '/')
+
+echo "Environment=\"KUBELET_EXTRA_ARGS=--node-ip=${NODE_IP}\"" >> /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+
+systemctl daemon-reload
+systemctl restart kubelet
