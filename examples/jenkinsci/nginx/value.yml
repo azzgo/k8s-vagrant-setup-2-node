@@ -1,0 +1,9 @@
+hostNetwork: true
+controller:
+  service:
+    externalIPs: ["192.168.33.10"]
+    type: NodePort
+    httpPort:
+      nodePort: 80
+    httpsPort:
+      nodePort: 443

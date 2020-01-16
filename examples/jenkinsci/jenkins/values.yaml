@@ -1,0 +1,7 @@
+master:
+  adminUser: admin
+  adminPassword: adminPass
+  ingress:
+    enabled: true
+    hostName: jenkins.192-168-33-10.nip.io
+

@@ -16,10 +16,13 @@ Vagrant.configure("2") do |config|
     master.vm.provider "virtualbox" do |v|
       v.memory = 4096
       v.cpus = 3
+      v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     end
-    master.vm.provision "file", source: "./kubeadm.yaml", destination: "$HOME/kubeadm.yaml"
-    master.vm.provision "shell", path: "ubuntu_basic-install.deb.sh"
-    master.vm.provision "shell", path: "setup_master.sh"
+    
+    master.vm.provision "file", source: "./templates/kubeadm.yaml", destination: "$HOME/kubeadm.yaml"
+    master.vm.provision "shell", path: "./scripts/up/ubuntu_basic-install.deb.sh"
+    master.vm.provision "shell", path: "./scripts/up/setup_master.sh"
   end
 
   config.vm.define "node" do |node|
@@ -29,10 +32,12 @@ Vagrant.configure("2") do |config|
     node.vm.provider "virtualbox" do |v|
       v.memory = 4096
       v.cpus = 3
+      v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     end
+
     node.vm.provision "shell", path: "ubuntu_basic-install.deb.sh"
     node.vm.provision "shell", inline: "sh /vagrant/kubeadm_join_cmd.sh"
-    # node.vm.provision "shell", inline: "route add 10.96.0.1 gw 192.168.33.10"
   end
 
 end
