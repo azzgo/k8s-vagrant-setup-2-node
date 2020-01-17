@@ -1,0 +1,21 @@
+[req]
+default_bits        = 2048
+default_keyfile     = docker-registry.key
+distinguished_name  = subject
+prompt              = no
+encrypt_key         = no
+
+[subject]
+countryName=CN
+stateOrProvinceName=Sichuan
+localityName=Chengdu
+organizationName=ThoughtWorks
+organizationalUnitName=IT OF TW
+emailAddress=cert@io.comx
+commonName=PDR
+
+[ v3_ext ]
+authorityKeyIdentifier=keyid,issuer:always
+basicConstraints=CA:FALSE
+keyUsage=keyEncipherment,dataEncipherment
+extendedKeyUsage=serverAuth,clientAuth

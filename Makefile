@@ -3,8 +3,16 @@ up:
 	vagrant up
 	sh ./scripts/up/kubectlConfig.sh
 
-jenkinsci: up
+jenkinsci:
 	@echo "in building..."
+	@echo "applying jenkins ci robot...."
+	sh ./scripts/jenkinsci/configures.sh
+	sh ./scripts/jenkinsci/install.sh
+
+unjenkinsci:
+	@echo "in reemoving jenkinsci..."
+	@echo "applying jenkins ci robot...."
+	sh ./scripts/jenkinsci/uninstall.sh
 
 destroy:
 	@echo "Removing your Vitural Mathine...."

@@ -25,4 +25,26 @@ make up
 
 运行完成后,你就可以操作集群了,虚拟机有相关问题需要调整,你可以运行 `vagrant ssh [master|node]` 到虚拟机终端中调试
 
+不需要，可以使用下面命令销毁虚拟机
+
+```
+make destroy
+```
+
+### 创建jenkins ci with 私有 Docker Registry
+
+```
+make jenkinsci
+```
+
+完成后,需要等待一段时间 jenkins pod 启动下载相关插件(确保你的网络可以正常下载jenkins.io的插件)
+
+然后访问 <http://jenkins.192-168-33-10.nip.io> 可以访问jinkins(初始账号密码是 admin:adminPass, 而 Docker Registry 的密码是 admin:adminDocker)
+
+不需要，可以使用下面命令销毁资源
+
+```
+make unjenkinsci
+```
+
 ## 心路历程
