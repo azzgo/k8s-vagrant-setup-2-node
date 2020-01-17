@@ -39,6 +39,7 @@ Vagrant.configure("2") do |config|
     end
 
     node.vm.provision "shell", path: "./scripts/up/ubuntu_basic-install.deb.sh"
+    node.vm.provision "shell", path: "./scripts/up/setup_node.sh"
     node.vm.provision "shell", inline: "sh /vagrant/kubeadm_join_cmd.sh"
   end
 
