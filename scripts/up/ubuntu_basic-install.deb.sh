@@ -2,7 +2,20 @@
 USER="vagrant"
 K8S_VERSION=1.17.0-00
 
-set -e
+set -xe
+ 
+## 替换apt源到国内
+sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g" /etc/apt/sources.list
+
+# K8S 阿里源
+
+curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | apt-key add -
+
+cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
+EOF
+
+apt-get update
 
 # 安装 docker
 curl -fsSL https://get.docker.com | sudo sh -s -- --mirror Aliyun
@@ -24,13 +37,6 @@ systemctl daemon-reload
 systemctl restart docker
 
 # 安装 kubeadm
-curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | apt-key add -
-
-cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
-deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
-EOF
-
-apt-get update
 apt-get install -y kubeadm=${K8S_VERSION} kubelet=${K8S_VERSION}
 
 # 关闭 SWAP

@@ -2,7 +2,7 @@
 
 这是我个人摸索出来在 Mac Desktory 上用 Vagrant 配合 VitualBox 运行一个 K8S 集群的沉淀, 欢迎使用和提出意见
 
-本人使用 kubeadm 运行 k8s 1.17 无碍
+本人使用 kubeadm 运行 k8s 1.17 (全部改换国内源) 无碍
 
 ## Preparation
 
@@ -25,4 +25,4 @@ make up
 
 运行完成后,你就可以操作集群了,虚拟机有相关问题需要调整,你可以运行 `vagrant ssh [master|node]` 到虚拟机终端中调试
 
-## Issues
+## 心路历程

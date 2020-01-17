@@ -8,4 +8,5 @@ jenkinsci: up
 
 destroy:
 	@echo "Removing your Vitural Mathine...."
-	vagrant destroy -f
+	vagrant destroy -f | true
+	@echo "Done"

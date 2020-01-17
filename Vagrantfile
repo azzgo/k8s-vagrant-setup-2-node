@@ -15,7 +15,8 @@ Vagrant.configure("2") do |config|
     master.vm.hostname = "master"
     master.vm.provider "virtualbox" do |v|
       v.memory = 4096
-      v.cpus = 3
+      v.cpus = 2
+      # 使用宿主机 DNS 寻找,不然访问境外如 Github 等网站 dns 会返回一个美国地址,导致超时
       v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
       v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     end
@@ -31,12 +32,13 @@ Vagrant.configure("2") do |config|
     node.vm.hostname = "node"
     node.vm.provider "virtualbox" do |v|
       v.memory = 4096
-      v.cpus = 3
+      v.cpus = 2
+      # 使用宿主机 DNS 寻找,不然访问境外如 Github 等网站 dns 会返回一个美国地址,导致超时
       v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
       v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     end
 
-    node.vm.provision "shell", path: "ubuntu_basic-install.deb.sh"
+    node.vm.provision "shell", path: "./scripts/up/ubuntu_basic-install.deb.sh"
     node.vm.provision "shell", inline: "sh /vagrant/kubeadm_join_cmd.sh"
   end
 

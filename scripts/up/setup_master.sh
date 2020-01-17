@@ -1,6 +1,13 @@
 #!/bin/sh
 
-kubeadm config images pull
+# 替代 kubeadm config images pull 为国内拉取,tag改换
+for image in $(kubeadm config images list | sed s/k8s.gcr.io/gcr.azk8s.cn\\/google_containers/g | grep ^gcr.azk8s.cn)
+do
+docker pull $image
+docker tag $image $(echo $image | sed s/gcr.azk8s.cn\\/google_containers/k8s.gcr.io/)
+docker rmi $image
+done
+# 
 kubeadm init --config /home/vagrant/kubeadm.yaml
 
 sudo --user=vagrant mkdir -p /home/vagrant/.kube
