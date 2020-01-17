@@ -1,7 +1,7 @@
 up:
 	@echo "Your Cluster starting lauching..."
 	vagrant up
-	sh ./scrpits/up/kubectlConfig.sh
+	sh ./scripts/up/kubectlConfig.sh
 
 jenkinsci: up
 	@echo "in building..."

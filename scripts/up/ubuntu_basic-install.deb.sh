@@ -49,8 +49,5 @@ NODE_IP=$(ip addr show enp0s8 | grep inet | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]
 
 echo "Environment=\"KUBELET_EXTRA_ARGS=--node-ip=${NODE_IP}\"" >> /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 
-## 为 kube-apiserver 更改运行运行的 Node Port 端口范围
-sed -i '/^([:space:]*)- kube-apiserver$/a \1- --service-node-port-range=1-65535' /etc/kubernetes/manifests/kube-apiserver.yaml
-
 systemctl daemon-reload
 systemctl restart kubelet
