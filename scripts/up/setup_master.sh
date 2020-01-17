@@ -37,4 +37,4 @@ cat /etc/kubernetes/admin.conf | grep client-key-data: | sed s/.*client-key-data
 ## kubectl taint nodes --all node-role.kubernetes.io/master-
 
 ## 为 kube-apiserver 更改运行运行的 Node Port 端口范围
-sed -i '/^([:space:]*)- kube-apiserver$/a \1- --service-node-port-range=1-65535' /etc/kubernetes/manifests/kube-apiserver.yaml
+sed -i 's/^\(\([: space :]*\)- kube-apiserver\)$/\1\n\2-\ --service-node-port-range=1-65535/' /etc/kubernetes/manifests/kube-apiserver.yaml
