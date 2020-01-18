@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # 替代 kubeadm config images pull 为国内拉取,tag改换
 for image in $(kubeadm config images list | sed s/k8s.gcr.io/gcr.azk8s.cn\\/google_containers/g | grep ^gcr.azk8s.cn)

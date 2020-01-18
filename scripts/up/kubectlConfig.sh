@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 KUBERNETES_PUBLIC_ADDRESS=192.168.33.10
 

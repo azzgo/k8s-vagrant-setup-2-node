@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 USER="vagrant"
 K8S_VERSION=1.17.0-00
 
@@ -51,3 +51,7 @@ echo "Environment=\"KUBELET_EXTRA_ARGS=--node-ip=${NODE_IP}\"" >> /etc/systemd/s
 
 systemctl daemon-reload
 systemctl restart kubelet
+
+
+# 修改默认dns
+sed -i 's/nameserver .*/nameserver 223.5.5.5/g' /etc/resolv.conf

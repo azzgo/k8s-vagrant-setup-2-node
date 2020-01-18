@@ -1,4 +1,4 @@
-#/bin/sh
+#/bin/bash
 
 # 增加 Jenkins CI Role 确保其有 Service, Pod, Deployments 的操作权限
 

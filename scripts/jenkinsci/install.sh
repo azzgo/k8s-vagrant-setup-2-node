@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 CURRENT_SCRIPT_PATH=$(dirname $0)
 
