@@ -12,7 +12,7 @@ localityName=Chengdu
 organizationName=ThoughtWorks
 organizationalUnitName=IT OF TW
 emailAddress=cert@io.comx
-commonName=PDR
+commonName=docker-registry.default.svc.cluster.local
 
 [ v3_ext ]
 authorityKeyIdentifier=keyid,issuer:always

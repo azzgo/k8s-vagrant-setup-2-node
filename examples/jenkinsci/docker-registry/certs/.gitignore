@@ -1,0 +1,5 @@
+ca.crt
+ca.key
+docker-registry.crt
+docker-registry.csr
+docker-registry.key
