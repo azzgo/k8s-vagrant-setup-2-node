@@ -4,14 +4,6 @@
 
 本人使用 kubeadm 运行 k8s 1.17 (全部改换国内源) 无碍
 
-## Preview
-
-效果如下:
-
-![image](https://user-images.githubusercontent.com/5636512/72678791-16575c80-3ae4-11ea-9663-c5d271b7d86f.png)
-
-![image](https://user-images.githubusercontent.com/5636512/72678794-21aa8800-3ae4-11ea-8c64-0491cb64cade.png)
-
 ## Preparation
 
 本文档假设你本机已经安装了一下工具
@@ -40,6 +32,14 @@ make destroy
 ```
 
 ### 创建jenkins ci with 私有 Docker Registry
+
+效果如下
+
+效果如下:
+
+![image](https://user-images.githubusercontent.com/5636512/72678791-16575c80-3ae4-11ea-9663-c5d271b7d86f.png)
+
+![image](https://user-images.githubusercontent.com/5636512/72678794-21aa8800-3ae4-11ea-8c64-0491cb64cade.png)
 
 关联应用Example Repo: 
 - 前端： https://github.com/azzgo/fox-web
