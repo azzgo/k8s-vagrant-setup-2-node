@@ -35,9 +35,10 @@ make destroy
 
 效果如下:
 
-![image](https://user-images.githubusercontent.com/5636512/72678791-16575c80-3ae4-11ea-9663-c5d271b7d86f.png)
+![image](https://user-images.githubusercontent.com/5636512/72678878-ee1c2d80-3ae4-11ea-9c05-916d772fec58.png)
 
-![image](https://user-images.githubusercontent.com/5636512/72678794-21aa8800-3ae4-11ea-8c64-0491cb64cade.png)
+![image](https://user-images.githubusercontent.com/5636512/72678872-da70c700-3ae4-11ea-9464-361fa98fee67.png)
+
 
 关联应用Example Repo: 
 - 前端：https://github.com/azzgo/fox-web
