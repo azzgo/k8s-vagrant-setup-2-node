@@ -6,14 +6,24 @@ metadata:
 rules:
 - apiGroups:
   - ""
-  - "apps"
   resources:
-  - deployments
   - services
   - pods
   - pods/exec
   - pods/log
   - persistentvolumeclaims
+  verbs:
+  - '*'
+- apiGroups:
+  - "apps"
+  resources:
+  - deployments
+  verbs:
+  - '*'
+- apiGroups:
+  - "networking.k8s.io"
+  resources:
+  - ingresses
   verbs:
   - '*'
 ---

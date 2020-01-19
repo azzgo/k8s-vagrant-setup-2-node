@@ -4,3 +4,4 @@
 *.log
 config
 kubeadm_join_cmd.sh
+*.srl

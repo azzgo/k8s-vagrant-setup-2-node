@@ -16,6 +16,9 @@ chown $(id -u vagrant):$(id -g vagrant) /home/vagrant/.kube/config
 
 export KUBECONFIG=/etc/kubernetes/admin.conf
 
+## 设置 coredns 默认 dns 到阿里dns
+kubectl apply -f /vagrant/templates/coredns.yaml
+
 ## 安装网络插件
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 

@@ -12,7 +12,11 @@ localityName=Chengdu
 organizationName=ThoughtWorks
 organizationalUnitName=IT OF TW
 emailAddress=cert@io.comx
-commonName=docker-registry.default.svc.cluster.local
+commonName=docker-registry.192-168-33-10.nip.io
+
+[ alt_names ]
+DNS.1 = docker-registry.default.svc.cluster.local
+IP.1  = 192.168.33.10
 
 [ v3_ext ]
 authorityKeyIdentifier=keyid,issuer:always

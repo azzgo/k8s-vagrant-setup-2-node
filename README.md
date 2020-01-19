@@ -33,6 +33,10 @@ make destroy
 
 ### 创建jenkins ci with 私有 Docker Registry
 
+关联应用Example Repo: 
+- 前端： https://github.com/azzgo/fox-web
+
+使用下面命令一键创建 cicd
 ```
 make jenkinsci
 ```
@@ -46,5 +50,13 @@ make jenkinsci
 ```
 make unjenkinsci
 ```
+
+> 注意：
+> 因为 docker registry 的证书在创建虚拟机的时候已经拷贝过了，如果你需要生成你自己的自签名证书，
+> 需要自己手动拷贝到所有虚拟机上去，并使用下面命令更新证书信息
+> sudo cp ca.crt /usr/local/share/ca-certificates/kubernetes.crt
+> sudo update-ca-certificates
+> 参考：https://kubernetes.io/zh/docs/concepts/cluster-administration/certificates/
+
 
 ## 心路历程

@@ -53,5 +53,6 @@ systemctl daemon-reload
 systemctl restart kubelet
 
 
-# 修改默认dns
-sed -i 's/nameserver .*/nameserver 223.5.5.5/g' /etc/resolv.conf
+## 拷贝 CA 证书，后面的 Examples 有用
+cp /vagrant/examples/jenkinsci/docker-registry/certs/ca.crt /usr/local/share/ca-certificates/kubernetes.crt
+update-ca-certificates

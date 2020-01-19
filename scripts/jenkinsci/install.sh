@@ -18,4 +18,7 @@ helm install nginx-ingress nginx-stable/nginx-ingress -f $CURRENT_SCRIPT_PATH/..
 ## 准备证书
 sh $CURRENT_SCRIPT_PATH/../../examples/jenkinsci/docker-registry/certs/create-tls.sh
 
+## 准备用户
 helm install docker-registry stable/docker-registry -f $CURRENT_SCRIPT_PATH/../../examples/jenkinsci/docker-registry/values.yaml
+
+kubectl create secret docker-registry docker-registry-login --docker-server=docker-registry.192-168-33-10.nip.io --docker-email=email --docker-username=admin --docker-password=adminDocker

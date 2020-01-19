@@ -3,4 +3,12 @@ persistence:
 secrets:
   # 密码提前生成: admin:adminDocker
   htpasswd: admin:$2y$05$0iFO9g6KjunhJ4vBvHLLZOeHTJ.b1lbmdDw5hxhDvjgM/w6GPGI6q
-tlsSecretName: docker-registry-tls
+tlsSecretName: 
+ingress:
+  enabled: true
+  tls:
+  - hosts:
+    - docker-registry.192-168-33-10.nip.io
+    secretName: docker-registry-tls
+  hosts:
+  - docker-registry.192-168-33-10.nip.io

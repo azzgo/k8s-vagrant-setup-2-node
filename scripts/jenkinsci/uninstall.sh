@@ -10,6 +10,7 @@ kubectl delete -f $CURRENT_SCRIPT_PATH/../../examples/jenkinsci/jenkins/rabc.yam
 helm uninstall docker-registry
 kubectl delete secret docker-registry-tls
 kubectl delete secret docker-registry-ca
+kubectl delete secret docker-registry-login
 
 helm uninstall nginx-ingress
 
