@@ -33,8 +33,6 @@ make destroy
 
 ### 创建jenkins ci with 私有 Docker Registry
 
-效果如下
-
 效果如下:
 
 ![image](https://user-images.githubusercontent.com/5636512/72678791-16575c80-3ae4-11ea-9663-c5d271b7d86f.png)
