@@ -40,7 +40,8 @@ make destroy
 ![image](https://user-images.githubusercontent.com/5636512/72678794-21aa8800-3ae4-11ea-8c64-0491cb64cade.png)
 
 关联应用Example Repo: 
-- 前端： https://github.com/azzgo/fox-web
+- 前端：https://github.com/azzgo/fox-web
+- 后端：https://github.com/azzgo/fox-api
 
 使用下面命令一键创建 cicd
 ```
