@@ -69,5 +69,3 @@ make unjenkinsci
 > sudo update-ca-certificates
 > 参考：https://kubernetes.io/zh/docs/concepts/cluster-administration/certificates/
 
-
-## 心路历程
