@@ -12,7 +12,9 @@ kubectl delete secret docker-registry-tls
 kubectl delete secret docker-registry-ca
 kubectl delete secret docker-registry-login
 
+kubectl delete -f $CURRENT_SCRIPT_PATH/../../examples/jenkinsci/fox-dev.ingress.yaml
 helm uninstall nginx-ingress
+
 
 echo "Deleted, run \"helm ls\" ing..."
 

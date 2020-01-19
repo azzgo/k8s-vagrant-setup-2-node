@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: fox-ingress
+spec:
+  rules:
+  - host: fox-dev.192-168-33-10.nip.io
+    http:
+      paths:
+      - backend:
+          serviceName: fox-web-dev
+          servicePort: 80
