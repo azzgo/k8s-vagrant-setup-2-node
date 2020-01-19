@@ -2,15 +2,17 @@
 
 CURRENT_SCRIPT_PATH=$(dirname $0)
 
-# 生成私钥
-# openssl genrsa -out $CURRENT_SCRIPT_PATH/docker-registry.key 2048
+
 
 # 生成CA私钥，和证书
 # openssl genrsa -out $CURRENT_SCRIPT_PATH/ca.key 2048
 
-openssl req -x509 -new -nodes -key $CURRENT_SCRIPT_PATH/ca.key \
--subj "/CN=Master" -days 10000 \
--out $CURRENT_SCRIPT_PATH/ca.crt
+# openssl req -x509 -new -nodes -key $CURRENT_SCRIPT_PATH/ca.key \
+# -subj "/CN=Master" -days 10000 \
+# -out $CURRENT_SCRIPT_PATH/ca.crt
+
+# 生成私钥
+openssl genrsa -out $CURRENT_SCRIPT_PATH/docker-registry.key 2048
 
 # 生成证书请求
 openssl req -new -key $CURRENT_SCRIPT_PATH/docker-registry.key -out $CURRENT_SCRIPT_PATH/docker-registry.csr -config $CURRENT_SCRIPT_PATH/ssl.cnf

@@ -10,3 +10,7 @@ spec:
       - backend:
           serviceName: fox-web-dev
           servicePort: 80
+      - backend:
+          serviceName: fox-api-dev
+          servicePort: 80
+        path: /api

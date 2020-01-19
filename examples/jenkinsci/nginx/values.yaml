@@ -1,5 +1,9 @@
 hostNetwork: true
 controller:
+  config:
+    name: nginx-ingress-config
+    entries:
+      client-max-body-size: "300m"
   service:
     externalIPs: ["192.168.33.10"]
     type: NodePort

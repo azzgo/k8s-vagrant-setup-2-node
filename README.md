@@ -45,7 +45,10 @@ make jenkinsci
 
 然后访问 <http://jenkins.192-168-33-10.nip.io> 可以访问jinkins(初始账号密码是 admin:adminPass, 而 Docker Registry 的密码是 admin:adminDocker)
 
-不需要，可以使用下面命令销毁资源
+应用目前由以下环节
+- Dev: <http://fox-dev.192-168-33-10.nip.io>
+
+如果需要清空资源，可以使用下面命令销毁资源
 
 ```
 make unjenkinsci

@@ -8,6 +8,10 @@ helm repo add nginx-stable https://helm.nginx.com/stable
 helm repo update
 
 # 安装 Jenkins
+## 提前添加 credentials
+kubectl create secret generic jenkins-credentials-xml  --from-file $CURRENT_SCRIPT_PATH/../../examples/jenkinsci/jenkins/credentials.xml
+## 添加ci-robot角色，用于部署
+kubectl apply -f $CURRENT_SCRIPT_PATH/../../examples/jenkinsci/jenkins/rabc.yaml
 helm install jenkins stable/jenkins -f $CURRENT_SCRIPT_PATH/../../examples/jenkinsci/jenkins/values.yaml 
 
 # 安装 nginx-ingress
