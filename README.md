@@ -1,4 +1,4 @@
-# K8S Vagrant personal practive
+# K8S via Vagrant
 
 这是我个人摸索出来在 Mac Desktory 上用 Vagrant 配合 VitualBox 运行一个 K8S 集群的沉淀, 欢迎使用和提出意见
 
@@ -69,3 +69,13 @@ make unjenkinsci
 > sudo update-ca-certificates
 > 参考：https://kubernetes.io/zh/docs/concepts/cluster-administration/certificates/
 
+
+## Issues 
+
+**服务无法访问，几乎所有的 deployments.apps AVAILABLE 列都显示 0**：服务启动一段时间后，有一定概率会遇到这个问题，我没有排查出具体问题，你可以使用 `vagrant reload` 重启虚拟机集群，可以暂时性解决此问题。
+
+## TODO
+
+有待优化：
+
+* 目前 jenkinsci demo 相关的密码没有统一配置的地方，散落在不同的地方，下一步需要借助模板来统一配置
